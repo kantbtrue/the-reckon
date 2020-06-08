@@ -17,6 +17,7 @@ export default class Settings extends Component {
         if ( state.isModalActive !== props.show ) {
             return {
                 ...state,
+                saveStatus: 'Save',
                 isModalActive: props.show
             }
         }
