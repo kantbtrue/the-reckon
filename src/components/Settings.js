@@ -13,22 +13,16 @@ export default class Settings extends Component {
     componentDidMount() {
         this.props.handleSettings(this.state);
     }
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            ...this.state,
-            isModalActive: nextProps.show
-        });
-    }
-    // static getDerivedStateFromProps(props, state){
-    //     if ( state.isModalActive !== props.show ) {
-    //         return {
-    //             ...state,
-    //             isModalActive: props.show
-    //         }
-    //     }
+    static getDerivedStateFromProps(props, state){
+        if ( state.isModalActive !== props.show ) {
+            return {
+                ...state,
+                isModalActive: props.show
+            }
+        }
 
-    //     return null;
-    // }
+        return null;
+    }
     handleSelect = (e) => {
         this.setState({
             ...this.state,
@@ -61,15 +55,12 @@ export default class Settings extends Component {
         }, 1000);
         this.props.handleSettings(this.state);        
     };
-    handleModalClose = () => {
-        this.setState({
-            ...this.state,
-            isModalActive: false
-        });
+    handleModal = () => {
+        this.props.handleModal(false);
     };
     render() {
         return (
-            <Modal show={this.state.isModalActive} onHide={this.handleModalClose} centered>
+            <Modal show={this.state.isModalActive} onHide={this.handleModal} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Settings</Modal.Title>
                 </Modal.Header>
@@ -104,7 +95,7 @@ export default class Settings extends Component {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button type="button" variant="secondary" size="lg" onClick={this.handleModalClose}>Close</Button>
+                    <Button type="button" variant="secondary" size="lg" onClick={this.handleModal}>Close</Button>
                         <Button type="button" variant="primary" size="lg" onClick={this.handleSubmit}>{this.state.saveStatus}</Button>
                 </Modal.Footer>
             </Modal>

@@ -11,7 +11,7 @@ class Header extends React.Component {
     render() {
         return (
             <header className="header" id="header">
-                <Navbar bg="light" expand="sm">
+                <Navbar bg="light">
                     <Container>
                         <Navbar.Brand href="/">
                             The Reckon
@@ -19,7 +19,7 @@ class Header extends React.Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="ml-auto align-items-center">
-                                <Nav.Item>Intraday brokerage Calculator</Nav.Item>
+                                <Nav.Item className="pr-2">Intraday brokerage Calculator</Nav.Item>
                                 <Nav.Item>
                                     <Button variant="dark" type="submit" size="sm" onClick={this.handleModal}>
                                         <FontAwesomeIcon icon={faCog}> Settings</FontAwesomeIcon>

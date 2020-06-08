@@ -36,7 +36,7 @@ class App extends React.Component {
                 <Header handleModal={this.handleModal} />
                 <Main shares={this.state.shares} settings={this.state.settings} handleAddShare={this.handleAddShare} />
                 <Footer />
-                <Settings show={this.state.modalState} handleSettings={this.handleSettings} />
+                <Settings show={this.state.modalState} handleModal={this.handleModal} handleSettings={this.handleSettings} />
             </React.Fragment>
         );
     }
