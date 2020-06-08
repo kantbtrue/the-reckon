@@ -1,0 +1,17 @@
+{
+	"accTypes": [
+		{
+			"name": "Zerodha",
+			"slug": "zerodha"
+		}
+	],
+	"tradingTypes": [
+		{
+			"name": "Interaday",
+			"slug": "interaday"
+		}
+	],
+	"states": {
+		"DL": {"name":"Delhi", "stampDuty": 0.00002}
+	}
+}
